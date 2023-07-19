@@ -5,7 +5,7 @@ export const HomePage = () => {
   return (
     <C.HomeContainer>
       <div className="header">
-        <h1>Restaurante dos Santos</h1>
+        <h1>Santos's Bar</h1>
         <div className="icon">
           <MdFastfood />
         </div>
