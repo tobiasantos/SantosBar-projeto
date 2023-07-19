@@ -49,6 +49,13 @@ export const HomeContainer = styled.div`
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 3px 3px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
+    transform: scale(0.95)
+    
+  }
+
+  .bigCard:hover{
+    transform: scale(1);
+    transition: ease-in-out 0.3s;
   }
 
   .bigCard .bigCardText {
@@ -69,6 +76,12 @@ export const HomeContainer = styled.div`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 3px 3px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     border-radius: 20px;
+    transform: scale(0.95)
+  }
+
+  .smallCard:hover{
+    transform: scale(1);
+    transition: ease-in-out 0.3s;
   }
 
   .image {
