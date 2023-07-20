@@ -9,6 +9,7 @@ export const HomePage = () => {
       <div className="section">
         <h2>FAÇA SEU PEDIDO</h2>
         <div className="cards">
+          <a href="/menu"  > {/*onClick={() => setActiveMenu("bebidas")*/}
           <div
             className="bigCard"
             style={{
@@ -21,6 +22,7 @@ export const HomePage = () => {
               </div>
             </div>
           </div>
+          </a>
           <div
             className="smallCard"
             style={{

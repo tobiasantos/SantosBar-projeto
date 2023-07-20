@@ -1,15 +1,19 @@
 import { Item } from "../../components/item";
 import * as C from "./styled";
 import { Header } from "../../components/header";
+import { useState } from "react";
 
 import { cervejas } from "../../data/produtos";
 
 export const MenuPage = () => {
+  //const [activeMenu, setActiveMenu] = useState("");
+
   return (
     <> 
     <Header/>
- 
+    {/*activeMenu== "bebidas" ?*/}
       <C.Menu>
+       
         <div className="section">
 
           {cervejas.map((item) => (
@@ -22,7 +26,9 @@ export const MenuPage = () => {
             />
           ))}
         </div>
+         
       </C.Menu>
+        {/* : <h1>none</h1>}*/}
     </>
   );
 };
