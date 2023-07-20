@@ -5,10 +5,6 @@ export const HomeContainer = styled.div`
     text-align: center;
   }
 
-  .section h2 {
-    margin-top: 2rem;
-  }
-
   .cards {
     display: flex;
     align-items: center;

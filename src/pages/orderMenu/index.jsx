@@ -1,21 +1,16 @@
 import { Item } from "../../components/item";
 import * as C from "./styled";
+import { Header } from "../../components/header";
 
 import { cervejas } from "../../data/produtos";
 
 export const MenuPage = () => {
   return (
-    <>
+    <> 
+    <Header/>
+ 
       <C.Menu>
         <div className="section">
-          {/* testando uma futura lista feita com map */}
-
-          {/* <Item  className="box"/>
-        <Item className="box"/>
-        <Item className="box"/>
-        <div className="break"/>
-        <Item className="box"/>
-        <Item className="box"/> */}
 
           {cervejas.map((item) => (
             <Item
