@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ItemRow = styled.div`
   .card {
@@ -63,8 +63,17 @@ export const ItemRow = styled.div`
   }
 
   .content span {
-    position: relative;
-    bottom: 12px;
     font-weight: 600;
   }
-`;
+
+  .actions {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .actions .add {
+    font-size: 20px;
+  }
+`
