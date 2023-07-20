@@ -75,5 +75,6 @@ export const ItemRow = styled.div`
 
   .actions .add {
     font-size: 20px;
+    cursor: pointer;
   }
 `
