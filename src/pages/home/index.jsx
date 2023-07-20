@@ -1,15 +1,11 @@
 import * as C from "./styled";
-import { MdFastfood } from "react-icons/md";
+
+import { Header } from "../../components/header";
 
 export const HomePage = () => {
   return (
     <C.HomeContainer>
-      <div className="header">
-        <h1>Santos's Bar</h1>
-        <div className="icon">
-          <MdFastfood />
-        </div>
-      </div>
+      <Header />
       <div className="section">
         <h2>FAÇA SEU PEDIDO</h2>
         <div className="cards">

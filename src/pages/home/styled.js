@@ -1,27 +1,6 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-  .header {
-    padding-top: 1.5rem;
-    height: 11rem;
-    width: 100%;
-    background-color: #ffcc00;
-    color: white;
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .header h1 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 42px;
-  }
-
-  .header .icon {
-    font-size: 55px;
-    margin-top: 0;
-  }
-
   .section {
     text-align: center;
   }
@@ -49,11 +28,10 @@ export const HomeContainer = styled.div`
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 3px 3px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    transform: scale(0.95)
-    
+    transform: scale(0.95);
   }
 
-  .bigCard:hover{
+  .bigCard:hover {
     transform: scale(1);
     transition: ease-in-out 0.3s;
   }
@@ -76,10 +54,10 @@ export const HomeContainer = styled.div`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 3px 3px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     border-radius: 20px;
-    transform: scale(0.95)
+    transform: scale(0.95);
   }
 
-  .smallCard:hover{
+  .smallCard:hover {
     transform: scale(1);
     transition: ease-in-out 0.3s;
   }
