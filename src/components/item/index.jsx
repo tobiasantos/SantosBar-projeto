@@ -1,24 +1,19 @@
 import * as C from "./styled";
 
-export const Item = () => {
+export const Item = ({ nome, descricao, preco, img }) => {
   return (
     <>
       <C.ItemRow>
         <div className="card">
           <div className="image">
-            <img
-              src="https://t1.uc.ltmcdn.com/pt/posts/2/3/8/como_fazer_yakisoba_tradicional_7832_orig.jpg"
-              alt=""
-            />
+            <img src={img} />
           </div>
           <div className="content">
             <div className="meta">
-              <p>Yakisoba</p>
+              <p>{nome}</p>
             </div>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur.
-            </p>
-            <span>R$ 30.99</span>
+            <p className="description">{descricao}</p>
+            <span>{preco}</span>
           </div>
         </div>
       </C.ItemRow>
