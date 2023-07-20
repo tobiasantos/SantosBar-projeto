@@ -1,8 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   .section {
     text-align: center;
+  }
+
+  .section h2 {
+    margin-top: 2rem;
   }
 
   .cards {
@@ -75,4 +79,4 @@ export const HomeContainer = styled.div`
     text-align: center;
     color: azure;
   }
-`;
+`
