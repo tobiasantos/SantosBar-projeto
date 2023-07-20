@@ -24,12 +24,12 @@ export const HomePage = () => {
           <div
             className="smallCard"
             style={{
-              background: `url(https://ellebrasil-wp-images.s3.amazonaws.com/2022/09/image-288.jpg) center center`,
+              background: `url(https://www.baressp.com.br/barreporter/imgs2/petiscos-para-bares-e-botecos-baressp-1-min_210520201658.jpg) center center`,
             }}
           >
             <div className="cover">
               <div className="smallCardText">
-                <h3>SOBREMESAS</h3>
+                <h3>PETISCOS</h3>
               </div>
             </div>
           </div>
