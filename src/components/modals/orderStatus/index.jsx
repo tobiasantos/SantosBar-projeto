@@ -5,6 +5,8 @@ import { MainContext } from "../../../contexts/MainContext";
 
 import { StatusItem } from "../../statusItem";
 
+import { RxExit } from "react-icons/rx";
+
 export const StatusModal = ({ isOpen, setIsOpen }) => {
   const { state, dispatch } = useContext(MainContext);
 
@@ -12,6 +14,9 @@ export const StatusModal = ({ isOpen, setIsOpen }) => {
     isOpen && (
       <C.Wrapper>
         <C.Container>
+        <a className="esc" onClick={() => setIsOpen(false)}>
+            <RxExit />
+          </a>
           {state.production.productsProduction.map((item) => (
             <StatusItem
               key={item.id}
@@ -21,13 +26,14 @@ export const StatusModal = ({ isOpen, setIsOpen }) => {
               id={item.id}
             />
           ))}
-          <button
+          <a
+          className="sendButton"
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            Chama na bota
-          </button>
+            Ir para pagamento
+          </a>
         </C.Container>
       </C.Wrapper>
     )

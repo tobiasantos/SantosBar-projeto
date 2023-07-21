@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from 'styled-components'
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-`;
+`
 
 export const Container = styled.div`
   width: 50%;
@@ -23,4 +23,29 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+
+  .sendButton {
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: #ffcc00;
+    padding: 12px;
+    border-radius: 5px;
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+
+  .sendButton:hover {
+    opacity: 1;
+    transition: ease-in-out 0.2s;
+    transform: scale(1);
+  }
+
+  .esc {
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    position: relative;
+    bottom: 0.6rem;
+    left: 28rem;
+  }
+`
