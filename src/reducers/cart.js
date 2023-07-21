@@ -1,7 +1,7 @@
 export const inicialCart = {
   table: 0,
   totalPrice: 0,
-  products: [],
+  products: []
   // {
   //   id: 1,
   //   type: 'beer',
@@ -11,63 +11,61 @@ export const inicialCart = {
   //   image: 'bud',
   //   quantity: 1
   // },
-};
+}
 
 export const reducerCart = (state, action) => {
   switch (action.type) {
-    case "UPDATE_CART":
-      Object.assign(state, action.payload);
-      return state;
+    case 'UPDATE_CART':
+      Object.assign(state, action.payload)
+      return state
 
-    case "ADD_PRODUCT":
-      const product = action.payload;
-      const productIndex = state.products.findIndex((p) => p.id === product.id);
+    case 'ADD_PRODUCT':
+      const product = action.payload
+      const productIndex = state.products.findIndex(p => p.id === product.id)
       if (productIndex === -1) {
-        product.quantity = 1;
-        state.products.push(product);
+        product.quantity = 1
+        state.products.push(product)
       } else {
-        state.products[productIndex].quantity++;
+        state.products[productIndex].quantity++
       }
-      return state;
+      return state
 
-    case "REMOVE_PRODUCT":
-      const productId = action.payload.id;
+    case 'REMOVE_PRODUCT':
+      const productId = action.payload.id
       const productIndexRemove = state.products.findIndex(
-        (p) => p.id === productId
-      );
+        p => p.id === productId
+      )
       if (productIndexRemove !== -1) {
         state.products[productIndexRemove].quantity &&
-          state.products[productIndexRemove].quantity--;
+          state.products[productIndexRemove].quantity--
       }
-      return state;
+      return state
 
-    case "INCREASE_PRODUCT":
-      const productIdIncrease = action.payload.id;
+    case 'INCREASE_PRODUCT':
+      const productIdIncrease = action.payload.id
       const productIndexIncrease = state.products.findIndex(
-        (p) => p.id === productIdIncrease
-      );
+        p => p.id === productIdIncrease
+      )
       if (productIndexIncrease !== -1) {
-        state.products[productIndexIncrease].quantity++;
+        state.products[productIndexIncrease].quantity++
       }
-      return state;
+      return state
 
-    case "DELETE_PRODUCT":
-      const productIdAll = action.payload.id;
+    case 'DELETE_PRODUCT':
+      const productIdAll = action.payload.id
       const productIndexRemoveAll = state.products.findIndex(
-        (p) => p.id === productIdAll
-      );
+        p => p.id === productIdAll
+      )
       if (productIndexRemoveAll !== -1) {
-        state.products.splice(productIndexRemoveAll, 1);
+        state.products.splice(productIndexRemoveAll, 1)
       }
-      return state;
+      return state
 
-    case "CLEAR_CART":
-      for (let i = 0; i < state.products.length; i++) {
-        state.products.pop();
-      }
-      return state;
+    case 'CLEAR_CART':
+      state.products.splice(0, state.products.length)
+      return state
 
     default:
-      return state;
+      return state
   }
-};
+}
