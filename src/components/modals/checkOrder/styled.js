@@ -24,6 +24,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  .esc {
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    position: relative;
+    bottom: 0.6rem;
+    left: 25rem;
+  }
+
   .sendButton {
     margin-top: 0.5rem;
     cursor: pointer;

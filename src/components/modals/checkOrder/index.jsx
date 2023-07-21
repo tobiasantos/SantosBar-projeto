@@ -2,7 +2,7 @@ import * as C from "./styled";
 
 import { useContext } from "react";
 import { MainContext } from "../../../contexts/MainContext";
-
+import { RxExit } from "react-icons/rx";
 import { CartItem } from "../../cartItem";
 
 export const OrderModal = ({ isOpen, setIsOpen }) => {
@@ -13,12 +13,13 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
     state.cart.products.forEach((item) => {
       total += item.price * item.quantity;
     });
-    return total;
+    return total
   };
   return (
     isOpen && (
       <C.Wrapper>
         <C.Container>
+          <a className="esc"  onClick={() => setIsOpen(false)}><RxExit/></a>
           {state.cart.products.map((item) => (
             <CartItem
               key={item.id}
@@ -34,7 +35,7 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               setIsOpen(false);
               dispatch({
                 type: "UPDATE_CART",
-                payload: { totalPrice: getTotalPrice() },
+                payload: { totalPrice: getTotalPrice()},
               });
             }}
           >
