@@ -2,6 +2,7 @@ import * as C from "./styled";
 
 import { useContext } from "react";
 import { MainContext } from "../../contexts/MainContext";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle,AiOutlineDelete } from "react-icons/ai";
 
 export const CartItem = ({ name, description, price, img, id }) => {
   const { state, dispatch } = useContext(MainContext);
@@ -37,17 +38,17 @@ export const CartItem = ({ name, description, price, img, id }) => {
       <C.ItemImg src={img} />
       <C.ItemInfo>
         <C.ItemName>{name}</C.ItemName>
-        <C.ItemDescription>{description}</C.ItemDescription>
+       {/* <C.ItemDescription>{description}</C.ItemDescription>*/}
       </C.ItemInfo>
       <C.AmountHandler>
         <C.ItemQuant>{getQuantity()}</C.ItemQuant>
         <C.ItemBtns>
-          <C.ItemBtnText onClick={() => addItem(id)}>+</C.ItemBtnText>
-          <C.ItemBtnText onClick={() => removeItem(id)}>-</C.ItemBtnText>
+          <C.ItemBtnText onClick={() => addItem(id)}><AiOutlinePlusCircle/></C.ItemBtnText>
+          <C.ItemBtnText onClick={() => removeItem(id)}><AiOutlineMinusCircle/></C.ItemBtnText>
         </C.ItemBtns>
       </C.AmountHandler>
       <C.ItemPrice>R$ {price * getQuantity()}</C.ItemPrice>
-      <C.RemoveBtn onClick={() => deleteItem(id)}>X</C.RemoveBtn>
+      <C.RemoveBtn onClick={() => deleteItem(id)}><AiOutlineDelete/></C.RemoveBtn>
     </C.ItemWrapper>
   );
 };

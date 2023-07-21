@@ -29,7 +29,7 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               id={item.id}
             />
           ))}
-          <button
+          <a className="sendButton"
             onClick={() => {
               setIsOpen(false);
               dispatch({
@@ -38,8 +38,8 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               });
             }}
           >
-            Chama na bota
-          </button>
+            Finalizar Pedido
+          </a>
         </C.Container>
       </C.Wrapper>
     )
