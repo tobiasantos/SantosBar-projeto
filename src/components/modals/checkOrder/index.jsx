@@ -29,12 +29,13 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               id={item.id}
             />
           ))}
-          <a className="sendButton"
+          <a
+            className="sendButton"
             onClick={() => {
               setIsOpen(false);
               dispatch({
-                type: "UPDATE_CART",
-                payload: { totalPrice: getTotalPrice() },
+                type: "UPDATE_PRODUCTION",
+                payload: { productsProduction: [...state.cart.products] },
               });
             }}
           >

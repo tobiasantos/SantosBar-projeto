@@ -1,3 +1,5 @@
+import * as C from "./styled";
+
 import { useState, useEffect, useContext } from "react";
 import { MainContext } from "../../contexts/MainContext";
 

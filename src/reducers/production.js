@@ -6,9 +6,12 @@ export const inicialProduction = {
 export const reducerProduction = (state, action) => {
   switch (action.type) {
     case "UPDATE_PRODUCTION":
-      Object.assign(state, action.payload);
+      for (let product of action.payload.productsProduction) {
+        product.status = "Aguardando confirmação da cozinha...";
+        state.productsProduction.push(product);
+      }
       return state;
-    case "ADD_PRODUCT":
+    case "ADD_PRODUCTION_PRODUCT":
       state.productsProduction.push(action.payload);
       return state;
     default:
