@@ -9,11 +9,9 @@ export const StatusItem = ({ name, img, type, id }) => {
   const waitTime =
     type === "pratos" ? 15000 : type === "petiscos" ? 10000 : 6000;
 
-  const statusColor = {
-    "Aguardando confirmação da cozinha...": "#706e6e",
-    "Preparando pedido...": "#FFC700",
-    "Pedido pronto para retirada!": "#00FF00",
-  };
+    const aguardando = "Aguardando confirmação da cozinha...";
+    const preparando =  "Preparando pedido...";
+    const pronto =  "Pedido pronto para retirada!";
 
   const kitchenCheck = () => {
     setTimeout(() => {
@@ -48,8 +46,8 @@ export const StatusItem = ({ name, img, type, id }) => {
   return (
     <C.StatusWrapper>
       <C.Img src={img} />
-      <C.Name>{name}</C.Name>
-      <C.StatusMsg>{getElementById(id).status}</C.StatusMsg>
+      <C.Name>{name }{"    "} </C.Name>
+    <div className={getElementById(id).status === aguardando ? "waiting" : getElementById(id).status === preparando ? "prep": getElementById(id).status === pronto ? "done":" x"} > { getElementById(id).status} </div>
     </C.StatusWrapper>
   );
 };
