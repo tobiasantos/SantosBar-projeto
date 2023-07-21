@@ -6,7 +6,15 @@ import { MainContext } from "../../../contexts/MainContext";
 import { CartItem } from "../../cartItem";
 
 export const OrderModal = ({ isOpen, setIsOpen }) => {
-  const { state } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext);
+
+  const getTotalPrice = () => {
+    let total = 0;
+    state.cart.products.forEach((item) => {
+      total += item.price * item.quantity;
+    });
+    return total;
+  };
   return (
     isOpen && (
       <C.Wrapper>
@@ -21,7 +29,17 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               id={item.id}
             />
           ))}
-          <button onClick={() => setIsOpen(false)}>Chama na bota</button>
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              dispatch({
+                type: "UPDATE_CART",
+                payload: { totalPrice: getTotalPrice() },
+              });
+            }}
+          >
+            Chama na bota
+          </button>
         </C.Container>
       </C.Wrapper>
     )
