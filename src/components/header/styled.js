@@ -1,12 +1,28 @@
 import { styled } from "styled-components";
 
 export const Header = styled.header`
-  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   height: 8rem;
-  width: 100%;
+  padding-top: 1.5rem;
   background-color: #ffcc00;
   color: white;
   text-align: center;
+
+  .logo {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .btns {
+    display: flex;
+    width: 50%;
+    gap: 1.5rem;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
 
   h1 {
     margin-bottom: 0.5rem;
@@ -15,5 +31,50 @@ export const Header = styled.header`
 
   .icon {
     font-size: 42px;
+  }
+`;
+
+export const HomeBtn = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 5%;
+  img {
+    max-width: 100%;
+    filter: invert(1);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+export const PedidosBtn = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 5%;
+  img {
+    max-width: 100%;
+    filter: invert(1);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+export const PagamentoBtn = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 5%;
+  img {
+    max-width: 100%;
+    filter: invert(1);
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 `;
