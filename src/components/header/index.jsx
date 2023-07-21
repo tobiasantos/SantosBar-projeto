@@ -3,21 +3,25 @@ import { MdFastfood } from "react-icons/md";
 import homeLogo from "../../assets/home.svg";
 import pedidosLogo from "../../assets/orders.svg";
 import pagamentoLogo from "../../assets/payment.svg";
+import statusLogo from "../../assets/status.svg";
 
 import React, { useState, useContext } from "react";
 import { MainContext } from "../../contexts/MainContext";
 import { useNavigate } from "react-router-dom";
 
 import { OrderModal } from "../modals/checkOrder";
+import { StatusModal } from "../modals/orderStatus";
 
 export const Header = () => {
   const { state } = useContext(MainContext);
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenCart, setIsOpenCart] = useState(false);
+  const [isOpenStatus, setIsOpenStatus] = useState(false);
 
   return (
     <C.Header>
-      <OrderModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <StatusModal isOpen={isOpenStatus} setIsOpen={setIsOpenStatus} />
+      <OrderModal isOpen={isOpenCart} setIsOpen={setIsOpenCart} />
       <div className="logo">
         <h1>Santos's Bar</h1>
         <div className="icon">
@@ -32,12 +36,15 @@ export const Header = () => {
         >
           <img src={homeLogo} />
         </C.HomeBtn>
-        <C.PedidosBtn onClick={() => setIsOpen(true)}>
+        <C.HomeBtn onClick={() => setIsOpenCart(true)}>
           <img src={pedidosLogo} />
-        </C.PedidosBtn>
-        <C.PagamentoBtn onClick={() => console.log(state)}>
+        </C.HomeBtn>
+        <C.HomeBtn onClick={() => setIsOpenStatus(true)}>
+          <img src={statusLogo} />
+        </C.HomeBtn>
+        <C.HomeBtn onClick={() => console.log(state)}>
           <img src={pagamentoLogo} />
-        </C.PagamentoBtn>
+        </C.HomeBtn>
       </div>
     </C.Header>
   );

@@ -37,39 +37,11 @@ export const Header = styled.header`
 
 export const HomeBtn = styled.button`
   cursor: pointer;
-  border: none;
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 50%;
   background-color: transparent;
-  width: 5%;
-  img {
-    max-width: 100%;
-    filter: invert(1);
-  }
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`;
-
-export const PedidosBtn = styled.button`
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  width: 5%;
-  img {
-    max-width: 100%;
-    filter: invert(1);
-  }
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`;
-
-export const PagamentoBtn = styled.button`
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  width: 5%;
+  width: 6%;
   img {
     max-width: 100%;
     filter: invert(1);
