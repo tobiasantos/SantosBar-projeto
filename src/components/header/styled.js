@@ -9,6 +9,7 @@ export const Header = styled.header`
   background-color: #ffcc00;
   color: white;
   text-align: center;
+  margin-bottom: 2.5rem;
 
   .logo {
     display: flex;

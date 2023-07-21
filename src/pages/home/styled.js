@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   .section {
@@ -75,4 +75,4 @@ export const HomeContainer = styled.div`
     text-align: center;
     color: azure;
   }
-`;
+`
