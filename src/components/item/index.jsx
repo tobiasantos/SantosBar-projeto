@@ -15,6 +15,7 @@ export const Item = ({ nome, descricao, preco, img, id }) => {
         type: currentType,
         description: descricao,
         price: preco,
+        img,
       },
     });
   };

@@ -41,6 +41,25 @@ export const reducerCart = (state, action) => {
       }
       return state;
 
+    case "INCREASE_PRODUCT":
+      const productIdIncrease = action.payload.id;
+      const productIndexIncrease = state.products.findIndex(
+        (p) => p.id === productIdIncrease
+      );
+      if (productIndexIncrease !== -1) {
+        state.products[productIndexIncrease].quantity++;
+      }
+      return state;
+
+    case "DELETE_PRODUCT":
+      const productIdAll = action.payload.id;
+      const productIndexRemoveAll = state.products.findIndex(
+        (p) => p.id === productIdAll
+      );
+      if (productIndexRemoveAll !== -1) {
+        state.products.splice(productIndexRemoveAll, 1);
+      }
+      return state;
     default:
       return state;
   }
