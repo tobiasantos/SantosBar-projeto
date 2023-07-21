@@ -4,9 +4,12 @@ export const ItemWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  color: black;
 `;
 
-export const ItemImg = styled.img``;
+export const ItemImg = styled.img`
+  max-width: 50px;
+`;
 
 export const ItemInfo = styled.div`
   display: flex;

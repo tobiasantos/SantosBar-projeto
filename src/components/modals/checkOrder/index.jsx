@@ -10,7 +10,7 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
   return (
     isOpen && (
       <C.Wrapper>
-        <C.Container onClick={() => setIsOpen(false)}>
+        <C.Container>
           {state.cart.products.map((item) => (
             <CartItem
               key={item.id}
@@ -21,6 +21,7 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               id={item.id}
             />
           ))}
+          <button onClick={() => setIsOpen(false)}>Chama na bota</button>
         </C.Container>
       </C.Wrapper>
     )
