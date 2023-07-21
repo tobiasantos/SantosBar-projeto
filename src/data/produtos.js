@@ -27,7 +27,7 @@ export const cervejas = [
   },
   {
     id: 2,
-    nome: 'Brahma Duplo Malte 600 ml',
+    nome: 'Brahma 600 ml',
     descricao: 'Cerveja Brahma Duplo Malte 600 ml',
     preco: 10.99,
     imagem: brahma

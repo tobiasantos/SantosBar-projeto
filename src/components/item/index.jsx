@@ -1,47 +1,50 @@
-import * as C from "./styled";
-import { GrAddCircle } from "react-icons/gr";
-import { useContext } from "react";
-import { MainContext } from "../../contexts/MainContext";
+import * as C from './styled'
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
+import { useContext } from 'react'
+import { MainContext } from '../../contexts/MainContext'
 
 export const Item = ({ nome, descricao, preco, img, id }) => {
-  const { state, dispatch } = useContext(MainContext);
+  const { state, dispatch } = useContext(MainContext)
 
-  const addItem = (currentType) => {
+  const addItem = currentType => {
     dispatch({
-      type: "ADD_PRODUCT",
+      type: 'ADD_PRODUCT',
       payload: {
         id,
         name: nome,
         type: currentType,
         description: descricao,
-        price: preco,
-      },
-    });
-  };
+        price: preco
+      }
+    })
+  }
 
-  const removeItem = (currentType) => {
+  const removeItem = currentType => {
     dispatch({
-      type: "REMOVE_PRODUCT",
-      payload: { id },
-    });
-  };
+      type: 'REMOVE_PRODUCT',
+      payload: { id }
+    })
+  }
 
   const getQuantity = () => {
-    const item = state.cart.products.find((item) => item.id === id);
+    const item = state.cart.products.find(item => item.id === id)
     if (item) {
-      return item.quantity;
+      return item.quantity
     } else {
-      return 0;
+      return 0
     }
-  };
+  }
 
   return (
     <>
       <C.ItemRow>
-        <h1>{getQuantity()}</h1>
-        <button onClick={() => removeItem()}>remove</button>
         <div className="card">
           <div className="image">
+          {getQuantity() > 0 ?  
+            <div className='quantity'>
+              <span> {getQuantity()}</span>
+            </div>
+           : ""}
             <img src={img} />
           </div>
           <div className="content">
@@ -52,15 +55,19 @@ export const Item = ({ nome, descricao, preco, img, id }) => {
             <div className="actions">
               <span>R$ {preco}</span>
               <div
-                className="add"
+                className="addRemove"
+                id="add"
                 onClick={() => addItem(state.info.currentProductView)}
               >
-                <GrAddCircle />
+                <AiOutlinePlusCircle />
+              </div>
+              <div className="addRemove" onClick={() => removeItem()}>
+                <AiOutlineMinusCircle />
               </div>
             </div>
           </div>
         </div>
       </C.ItemRow>
     </>
-  );
-};
+  )
+}
