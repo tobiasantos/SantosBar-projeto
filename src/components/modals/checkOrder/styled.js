@@ -16,25 +16,43 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 55%;
+  height: 90%;
   background: #ededed;
   border-radius: 8px;
   padding: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  position: relative;
+  overflow-y: auto;
 
   h2 {
     color: black;
   }
 
-  .esc {
+  /* .esc {
     cursor: pointer;
     color: black;
     font-size: 20px;
     position: relative;
     bottom: 0.6rem;
     left: 25rem;
+  } */
+
+  .esc {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #ffcc00;
+    font-size: 1rem;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+
+    img {
+      width: 1.5rem;
+    }
   }
 
   .sendButton {

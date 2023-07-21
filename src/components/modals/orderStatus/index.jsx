@@ -6,6 +6,7 @@ import { MainContext } from "../../../contexts/MainContext";
 import { StatusItem } from "../../statusItem";
 
 import { RxExit } from "react-icons/rx";
+import back from "../../../assets/back.svg";
 
 export const StatusModal = ({ isOpen, setIsOpen }) => {
   const { state, dispatch } = useContext(MainContext);
@@ -14,9 +15,10 @@ export const StatusModal = ({ isOpen, setIsOpen }) => {
     isOpen && (
       <C.Wrapper>
         <C.Container>
-        <a className="esc" onClick={() => setIsOpen(false)}>
-            <RxExit />
-          </a>
+          {/* <div className="esc" onClick={() => setIsOpen(false)}>
+            <img src={back} />
+            Voltar
+          </div> */}
           {state.production.productsProduction.map((item) => (
             <StatusItem
               key={item.id}
@@ -27,12 +29,12 @@ export const StatusModal = ({ isOpen, setIsOpen }) => {
             />
           ))}
           <a
-          className="sendButton"
+            className="sendButton"
             onClick={() => {
               setIsOpen(false);
             }}
           >
-            Ir para pagamento
+            Voltar ao Menu
           </a>
         </C.Container>
       </C.Wrapper>

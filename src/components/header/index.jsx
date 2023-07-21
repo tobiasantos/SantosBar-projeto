@@ -22,7 +22,7 @@ export const Header = () => {
     <C.Header>
       <StatusModal isOpen={isOpenStatus} setIsOpen={setIsOpenStatus} />
       <OrderModal isOpen={isOpenCart} setIsOpen={setIsOpenCart} />
-      <div className="logo">
+      <div className="logo" onClick={() => console.log(state)}>
         <h1>Santos's Bar</h1>
         <div className="icon">
           <MdFastfood />
@@ -36,13 +36,26 @@ export const Header = () => {
         >
           <img src={homeLogo} />
         </C.HomeBtn>
-        <C.HomeBtn onClick={() => setIsOpenCart(true)}>
+        <C.HomeBtn
+          reference={"cart"}
+          isEnabled={state.cart.products.length}
+          onClick={() => {
+            if (state.cart.products.length) setIsOpenCart(true);
+          }}
+        >
           <img src={pedidosLogo} />
         </C.HomeBtn>
         <C.HomeBtn onClick={() => setIsOpenStatus(true)}>
           <img src={statusLogo} />
         </C.HomeBtn>
-        <C.HomeBtn onClick={() => navigate("/payment")}>
+        <C.HomeBtn
+          onClick={() => {
+            alert(
+              "Para realizar o pagamento com dinheiro físico ou cartão de crédito/débido, se direcione até o caixa."
+            );
+            navigate("/payment");
+          }}
+        >
           <img src={pagamentoLogo} />
         </C.HomeBtn>
       </div>

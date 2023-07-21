@@ -11,10 +11,18 @@ import checkInBg from "../../assets/checkin-bg.jpg";
 
 export const CheckIn = () => {
   const navigate = useNavigate();
+  const { state, dispatch } = useContext(MainContext);
 
   const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
+
+  useEffect(() => {
+    dispatch({
+      type: "UPDATE_CART",
+      payload: { table: randomNumber(1, 20) },
+    });
+  }, []);
 
   return (
     <C.CheckInWrapper bg={checkInBg} bgMobile={checkInBgMobile}>
@@ -26,7 +34,7 @@ export const CheckIn = () => {
             <h1>Santos's Bar</h1>
           </div>
           <h3 className="greetings">Bem vindo(a) ao Santos's Bar!</h3>
-          <div className="table-info">Sua mesa é a {randomNumber(1, 20)}</div>
+          <div className="table-info">Sua mesa é a {state.cart.table}</div>
           <button onClick={() => navigate("/home")}>Ver cardápio</button>
         </C.Content>
       </C.Container>

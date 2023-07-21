@@ -32,8 +32,15 @@ export const CartItem = ({ name, price, img, id, isPayment = false }) => {
     });
   };
 
-  const getQuantity = () => {
+  const getQuantityInCart = () => {
     const item = state.cart.products.find((item) => item.id === id);
+    return item ? item.quantity : 0;
+  };
+
+  const getQuantityInPayment = () => {
+    const item = state.production.productsProduction.find(
+      (item) => item.id === id
+    );
     return item ? item.quantity : 0;
   };
 
@@ -45,7 +52,9 @@ export const CartItem = ({ name, price, img, id, isPayment = false }) => {
         {/* <C.ItemDescription>{description}</C.ItemDescription>*/}
       </C.ItemInfo>
       <C.AmountHandler>
-        <C.ItemQuant>{getQuantity()}</C.ItemQuant>
+        <C.ItemQuant>
+          {isPayment ? getQuantityInPayment() : getQuantityInCart()}
+        </C.ItemQuant>
         {isPayment ? (
           <span className="preco-unitario">{price}</span>
         ) : (
@@ -59,7 +68,9 @@ export const CartItem = ({ name, price, img, id, isPayment = false }) => {
           </C.ItemBtns>
         )}
       </C.AmountHandler>
-      <C.ItemPrice>R$ {price * getQuantity()}</C.ItemPrice>
+      <C.ItemPrice>
+        R$ {price * (isPayment ? getQuantityInPayment() : getQuantityInCart())}
+      </C.ItemPrice>
       {!isPayment && (
         <C.RemoveBtn onClick={() => deleteItem(id)}>
           <AiOutlineDelete />

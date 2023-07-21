@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -12,10 +12,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-`
+`;
 
 export const Container = styled.div`
-  width: 50%;
+  width: 55%;
+  height: 90%;
   background: #ededed;
   border-radius: 8px;
   padding: 20px;
@@ -23,6 +24,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  overflow-y: scroll;
 
   .sendButton {
     margin-top: 0.5rem;
@@ -40,12 +44,27 @@ export const Container = styled.div`
     transform: scale(1);
   }
 
-  .esc {
+  /* .esc {
     cursor: pointer;
     color: black;
     font-size: 20px;
     position: relative;
     bottom: 0.6rem;
     left: 28rem;
+  } */
+
+  .esc {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #ffcc00;
+    font-size: 1rem;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+
+    img {
+      width: 1.5rem;
+    }
   }
-`
+`;

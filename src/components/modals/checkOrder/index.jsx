@@ -5,6 +5,8 @@ import { MainContext } from "../../../contexts/MainContext";
 import { RxExit } from "react-icons/rx";
 import { CartItem } from "../../cartItem";
 
+import back from "../../../assets/back.svg";
+
 export const OrderModal = ({ isOpen, setIsOpen }) => {
   const { state, dispatch } = useContext(MainContext);
 
@@ -19,9 +21,10 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
     isOpen && (
       <C.Wrapper>
         <C.Container>
-          <a className="esc" onClick={() => setIsOpen(false)}>
-            <RxExit />
-          </a>
+          <div className="esc" onClick={() => setIsOpen(false)}>
+            <img src={back} />
+            Voltar
+          </div>
           {state.cart.products.map((item) => (
             <CartItem
               key={item.id}
@@ -44,6 +47,9 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               dispatch({
                 type: "UPDATE_PRODUCTION",
                 payload: { productsProduction: [...state.cart.products] },
+              });
+              dispatch({
+                type: "CLEAR_CART",
               });
             }}
           >

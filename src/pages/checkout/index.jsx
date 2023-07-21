@@ -1,5 +1,4 @@
 import * as C from "./styled";
-import QRCode from "qrcode.react";
 import { useState, useEffect, useContext, useRef } from "react";
 import { MainContext } from "../../contexts/MainContext";
 
@@ -9,11 +8,13 @@ import checkInBgMobile from "../../assets/checkin-bg.png";
 import checkInBg from "../../assets/checkin-bg.jpg";
 
 import { CartItem } from "../../components/cartItem";
+import { PixModal } from "../../components/modals/spawnPix";
 
 export const CheckOut = () => {
   const { state, dispatch } = useContext(MainContext);
   const ref = useRef(null);
   const [bg, setBg] = useState("");
+  const [pixIsOpen, setPixIsOpen] = useState(false);
 
   useEffect(() => {
     if (ref.current?.clientWidth <= 800) {
@@ -33,9 +34,10 @@ export const CheckOut = () => {
 
   return (
     <C.CheckOutWrapper ref={ref} bg={bg}>
+      <PixModal isOpen={pixIsOpen} setIsOpen={setPixIsOpen} />
       <C.CheckOutContainer>
         <C.ContentWrapper>
-          <div className="icon">
+          <div className="icon" onClick={() => console.log(state)}>
             <MdFastfood />
             <h1>Santos's Bar</h1>
           </div>
@@ -55,14 +57,10 @@ export const CheckOut = () => {
             <h2>Total: R$ {getTotalPrice().toFixed(2)}</h2>
           </C.Total>
           <C.Btn>
-            <button onClick={() => ""}>Pagar com pix</button>
+            <button onClick={() => setPixIsOpen(true)}>Pagar com pix</button>
           </C.Btn>
         </C.ContentWrapper>
       </C.CheckOutContainer>
     </C.CheckOutWrapper>
   );
 };
-
-// <C.QRWrapper>
-//   <QRCode value="00020126580014BR.GOV.BCB.PIX0136e019745e-4b2c-4b7f-add6-6072b367ad8752040000530398654045.005802BR5922Tobias dos Santos Neto6009SAO PAULO6108054090006225052186XUxQpRjDO9bqj1d9o026304390C" />
-// </C.QRWrapper>

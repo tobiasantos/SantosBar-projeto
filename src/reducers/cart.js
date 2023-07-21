@@ -1,5 +1,5 @@
 export const inicialCart = {
-  id: 0,
+  table: 0,
   totalPrice: 0,
   products: [],
   // {
@@ -60,6 +60,13 @@ export const reducerCart = (state, action) => {
         state.products.splice(productIndexRemoveAll, 1);
       }
       return state;
+
+    case "CLEAR_CART":
+      for (let i = 0; i < state.products.length; i++) {
+        state.products.pop();
+      }
+      return state;
+
     default:
       return state;
   }

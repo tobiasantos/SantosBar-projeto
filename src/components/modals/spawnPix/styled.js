@@ -23,9 +23,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: black;
 
-  h2 {
-    color: black;
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    text-align: center;
+    margin-top: 1.5rem;
   }
 
   .esc {

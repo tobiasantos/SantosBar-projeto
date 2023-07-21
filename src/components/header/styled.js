@@ -36,7 +36,8 @@ export const Header = styled.header`
 `;
 
 export const HomeBtn = styled.button`
-  cursor: pointer;
+  cursor: ${(props) =>
+    props.reference === "cart" && !props.isEnabled ? "not-allowed" : "pointer"};
   border: 1px solid white;
   padding: 8px;
   border-radius: 50%;
