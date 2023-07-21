@@ -11,8 +11,12 @@ export const reducerProduction = (state, action) => {
         state.productsProduction.push(product);
       }
       return state;
-    case "ADD_PRODUCTION_PRODUCT":
-      state.productsProduction.push(action.payload);
+    case "UPDATE_STATUS_PRODUCTION":
+      for (let product of state.productsProduction) {
+        if (product.id === action.payload.id) {
+          product.status = action.payload.status;
+        }
+      }
       return state;
     default:
       return state;

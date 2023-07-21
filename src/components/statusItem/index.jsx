@@ -5,7 +5,6 @@ import { MainContext } from "../../contexts/MainContext";
 
 export const StatusItem = ({ name, img, type, id }) => {
   const { state, dispatch } = useContext(MainContext);
-  const [status, setStatus] = useState("Aguardando confirmação da cozinha...");
 
   const waitTime =
     type === "pratos" ? 15000 : type === "petiscos" ? 10000 : 6000;
@@ -18,29 +17,39 @@ export const StatusItem = ({ name, img, type, id }) => {
 
   const kitchenCheck = () => {
     setTimeout(() => {
-      setStatus("Preparando pedido...");
+      dispatch({
+        type: "UPDATE_STATUS_PRODUCTION",
+        payload: { id, status: "Preparando pedido..." },
+      });
     }, 3000);
   };
 
   const readyCheck = () => {
     setTimeout(() => {
-      setStatus("Pedido pronto para retirada!");
+      dispatch({
+        type: "UPDATE_STATUS_PRODUCTION",
+        payload: { id, status: "Pedido pronto para retirada!" },
+      });
     }, waitTime);
   };
 
+  const getElementById = (id) => {
+    return state.production.productsProduction.find((item) => item.id === id);
+  };
+
   useEffect(() => {
-    if (status === "Aguardando confirmação da cozinha...") {
+    if (getElementById(id).status === "Aguardando confirmação da cozinha...") {
       kitchenCheck();
-    } else if (status === "Preparando pedido...") {
+    } else if (getElementById(id).status === "Preparando pedido...") {
       readyCheck();
     }
-  }, [status]);
+  }, [getElementById(id).status]);
 
   return (
     <C.StatusWrapper>
       <C.Img src={img} />
       <C.Name>{name}</C.Name>
-      <C.StatusMsg>{status}</C.StatusMsg>
+      <C.StatusMsg>{getElementById(id).status}</C.StatusMsg>
     </C.StatusWrapper>
   );
 };
