@@ -20,9 +20,10 @@ export const ItemRow = styled.div`
   }
 
   .card .image img {
-    object-fit: contain;
+    object-fit: cover;
     max-width: 100%;
-    /* height: 200px !important; */
+    height: 220px !important;
+    width: 365px;
   }
 
   .content {
@@ -30,7 +31,7 @@ export const ItemRow = styled.div`
     bottom: -18%;
     width: 300px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
   }
 
@@ -39,8 +40,8 @@ export const ItemRow = styled.div`
   }
 
   .content p {
-    color: black;
-    font-size: 18px;
+    color: white;
+    font-size: 17px;
     font-weight: 500;
   }
   .meta {
@@ -71,10 +72,38 @@ export const ItemRow = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #ffcc00;
   }
 
-  .actions .add {
+  .actions span {
+    color: white;
+  }
+
+  .actions .addRemove {
     font-size: 20px;
     cursor: pointer;
+  }
+
+  .actions #add {
+    margin-left: 8.8rem;
+  }
+
+  .quantity {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 42px;
+    height: 42px;
+    background-color: #ffcc00;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 21px;
+  }
+
+  .quantity span {
+    color: white;
+    font-weight: 600;
   }
 `

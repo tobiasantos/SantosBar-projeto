@@ -1,5 +1,5 @@
 import * as C from "./styled";
-import { GrAddCircle } from "react-icons/gr";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { useContext } from "react";
 import { MainContext } from "../../contexts/MainContext";
 
@@ -39,10 +39,15 @@ export const Item = ({ nome, descricao, preco, img, id }) => {
   return (
     <>
       <C.ItemRow>
-        <h1>{getQuantity()}</h1>
-        <button onClick={() => removeItem()}>remove</button>
         <div className="card">
           <div className="image">
+            {getQuantity() > 0 ? (
+              <div className="quantity">
+                <span> {getQuantity()}</span>
+              </div>
+            ) : (
+              ""
+            )}
             <img src={img} />
           </div>
           <div className="content">
@@ -53,10 +58,14 @@ export const Item = ({ nome, descricao, preco, img, id }) => {
             <div className="actions">
               <span>R$ {preco}</span>
               <div
-                className="add"
+                className="addRemove"
+                id="add"
                 onClick={() => addItem(state.info.currentProductView)}
               >
-                <GrAddCircle />
+                <AiOutlinePlusCircle />
+              </div>
+              <div className="addRemove" onClick={() => removeItem()}>
+                <AiOutlineMinusCircle />
               </div>
             </div>
           </div>
