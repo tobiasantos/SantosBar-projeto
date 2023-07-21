@@ -53,7 +53,7 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
               });
             }}
           >
-            Finalizar Pedido
+            Realizar Pedido
           </a>
         </C.Container>
       </C.Wrapper>
