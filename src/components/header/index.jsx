@@ -42,7 +42,7 @@ export const Header = () => {
         <C.HomeBtn onClick={() => setIsOpenStatus(true)}>
           <img src={statusLogo} />
         </C.HomeBtn>
-        <C.HomeBtn onClick={() => console.log(state)}>
+        <C.HomeBtn onClick={() => navigate("/payment")}>
           <img src={pagamentoLogo} />
         </C.HomeBtn>
       </div>

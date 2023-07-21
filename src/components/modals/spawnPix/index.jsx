@@ -22,20 +22,6 @@ export const OrderModal = ({ isOpen, setIsOpen }) => {
           <a className="esc" onClick={() => setIsOpen(false)}>
             <RxExit />
           </a>
-          {state.cart.products.map((item) => (
-            <CartItem
-              key={item.id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              img={item.img}
-              id={item.id}
-            />
-          ))}
-
-          {state.cart.products.length > 0 && (
-            <h2>Total: R$ {getTotalPrice().toFixed(2)}</h2>
-          )}
 
           <a
             className="sendButton"
