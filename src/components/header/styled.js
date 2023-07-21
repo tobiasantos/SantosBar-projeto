@@ -33,6 +33,12 @@ export const Header = styled.header`
   .icon {
     font-size: 42px;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const HomeBtn = styled.button`
@@ -50,5 +56,11 @@ export const HomeBtn = styled.button`
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    scale: 1.5;
+    border: none;
   }
 `;

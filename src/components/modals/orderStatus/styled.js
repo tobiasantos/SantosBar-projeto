@@ -23,7 +23,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 
   position: relative;
   overflow-y: scroll;
@@ -66,5 +66,9 @@ export const Container = styled.div`
     img {
       width: 1.5rem;
     }
+  }
+
+  @media (max-width: 800px) {
+    width: 80%;
   }
 `;

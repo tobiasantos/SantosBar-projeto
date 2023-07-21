@@ -17,7 +17,7 @@ export const HomePage = () => {
         <h2>FAÇA SEU PEDIDO</h2>
         <div className="cards">
           <div
-            className="bigCard"
+            className="smallCard"
             style={{
               background: `url(https://ibis.accor.com/editorial/imagerie/article/comida-mineira-pratos-tipicos-de-cada-regiao-do-brasil-358a_660x440.jpg) center center`,
             }}
@@ -30,7 +30,7 @@ export const HomePage = () => {
             }}
           >
             <div className="cover">
-              <div className="bigCardText">
+              <div className="smallCardText">
                 <h3>PRATOS PRINCIPAIS</h3>
               </div>
             </div>

@@ -10,12 +10,21 @@ export const ItemWrapper = styled.div`
   text-align: justify;
   padding: 12px;
   padding-top: 15px;
+
+  @media (max-width: 800px) {
+    text-align: center;
+    gap: 1.5rem;
+  }
 `;
 
 export const ItemImg = styled.img`
   width: 150px;
   height: 98px;
   object-fit: cover;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 export const ItemInfo = styled.div`

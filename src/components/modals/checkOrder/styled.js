@@ -70,4 +70,11 @@ export const Container = styled.div`
     transition: ease-in-out 0.2s;
     transform: scale(1);
   }
+
+  @media (max-width: 800px) {
+    width: 80%;
+    .esc {
+      font-size: 0;
+    }
+  }
 `;

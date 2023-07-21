@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   .section {
@@ -75,4 +75,19 @@ export const HomeContainer = styled.div`
     text-align: center;
     color: azure;
   }
-`
+
+  @media (max-width: 800px) {
+    .cards {
+      flex-direction: column;
+    }
+
+    .smallCard {
+      width: 80%;
+      margin-left: 0 !important;
+    }
+
+    .cover {
+      width: 100%;
+    }
+  }
+`;
